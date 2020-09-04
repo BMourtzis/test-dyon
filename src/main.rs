@@ -2,7 +2,7 @@
 extern crate dyon;
 
 use std::sync::Arc;
-use dyon::{error, run, load, Module, Call, Runtime, Dfn, Type};
+use dyon::{error, load, Module, Call, Runtime, Dfn, Type};
 
 fn main() {
     // error(run("src/scripts/test.dyon"));
