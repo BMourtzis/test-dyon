@@ -1,0 +1,29 @@
+fn main() {
+    // println("Hello World")
+    for i 20 {
+        println(fib(i))
+    }
+}
+
+fn f(x: f64) -> {
+    return x + 1
+}
+
+fn test() {
+    println("4")
+}
+
+fn test_update() {
+    update_x(4.0)
+}
+
+fn test_time() {
+    x := get_time()
+    println(x)
+}
+
+c() = 123
+
+fib(x) = if x <= 0 { 0 }
+        else if x == 1 { 1 }
+        else { fib(x - 1) + fib(x - 2) }
