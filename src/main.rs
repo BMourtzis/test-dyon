@@ -2,10 +2,43 @@
 extern crate dyon;
 
 use std::sync::Arc;
-use dyon::{error, load, Module, Call, Runtime, Dfn, Type};
+use dyon::{error, load, Module, Call, Runtime, Dfn, Type, Variable};
+use dyon::embed::PushVariable;
 
 fn main() {
-    
+    // let vec = vec![
+    //     Obj::new(4.0, 5.0, 7.0),
+    //     Obj::default()
+    // ];
+
+    let new_time = 4.0;
+
+    let mut module = Module::new();
+
+    error(load("src/scripts/component.dyon", &mut module));
+
+    let ref module = Arc::new(module);
+
+    let call = Call::new("update").arg(4.0);
+
+    let mut rt = Runtime::new();
+
+    let obj = Obj::new(4.0, 5.0, 6.0);
+    rt.push(obj);
+
+    error(call.run(&mut rt, module));
+
+    // for obj in vec {
+        
+    // }
+
+    dyon_fn!(fn get_new_time() -> f64 {
+        return new_time;
+    });
+}
+
+fn update_obj() {
+
 }
 
 fn test() {
@@ -72,4 +105,10 @@ impl Obj {
     // dyon_fn!{fn get_x(&self) -> f64 {
     //     return self.x;
     // }}
+}
+
+impl PushVariable for Obj {
+    fn push_var(&self) -> Variable {
+        return Variable::Vec4([self.x as f32, self.y as f32, self.z as f32, 0.0])
+    }
 }
