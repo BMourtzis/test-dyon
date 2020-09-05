@@ -36,3 +36,36 @@ dyon_fn!{fn update_x(i: f64) {
 dyon_fn!{fn get_time() -> f64 {
     return TIME;
 }}
+
+#[derive(Debug)]
+struct Obj {
+    x: f64,
+    y: f64,
+    z: f64
+}
+
+impl Obj {
+    pub fn new (x: f64, y: f64, z: f64) -> Self {
+        Obj {
+            x,
+            y,
+            z
+        }
+    }
+
+    pub fn default() -> Self {
+        Obj {
+            x: 0.0,
+            y: 0.0,
+            z: 0.0
+        }
+    }
+
+    // dyon_fn!{fn update_x(&mut self, x: f64) {
+    //     self.x = x;
+    // }}
+
+    // dyon_fn!{fn get_x(&self) -> f64 {
+    //     return self.x;
+    // }}
+}
