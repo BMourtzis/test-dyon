@@ -1,0 +1,20 @@
+
+// Start component state
+fn start() {
+
+}
+
+// Update on each frame
+fn update(time_delta) {
+
+}
+
+//Start Physics component
+fn start_physics() {
+
+}
+
+// Update Physics component
+fn update_physics() {
+
+}

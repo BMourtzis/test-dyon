@@ -5,6 +5,10 @@ use std::sync::Arc;
 use dyon::{error, load, Module, Call, Runtime, Dfn, Type};
 
 fn main() {
+    
+}
+
+fn test() {
     // error(run("src/scripts/test.dyon"));
 
     let mut module = Module::new();
